@@ -3,13 +3,13 @@ import { DirectionsService } from './directions.service';
 
 @Controller('directions')
 export class DirectionsController {
-  constructor(private directionService: DirectionsService) {}
+  constructor(private directionsService: DirectionsService) {}
 
   @Get()
-  getDirection(
+  getDirections(
     @Query('originId') originId: string,
     @Query('destinationId') destinationId: string,
   ) {
-    return this.directionService.getDirection(originId, destinationId);
+    return this.directionsService.getDirections(originId, destinationId);
   }
 }
